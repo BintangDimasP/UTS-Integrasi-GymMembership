@@ -1,7 +1,9 @@
 ## User Service - System Integration - GYM Membership
 
 Berisikan data registrasi member dengan 3 endpoint
+
 Bersifat provider-consumer
+
 Member melakukan registrasi berdasarkan data member dan package yang terdaftar.
 
 ## Dokumentasi API
