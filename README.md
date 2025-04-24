@@ -1,4 +1,4 @@
-## User Service - System Integration - GYM Membership
+## Package Service - System Integration - GYM Membership
 
 Berisikan data package yang tersedia dengan 5 endpoint
 
