@@ -2,6 +2,8 @@
 
 Berisikan data pribadi member dengan 5 endpoint
 
+Bersifat Provider
+
 ## Dokumentasi API
 Saya dokumentasikan dalam bentuk API Document yang berisikan 3 folder.
 
