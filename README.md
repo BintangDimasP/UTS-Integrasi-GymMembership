@@ -1,4 +1,4 @@
-## User Service - System Integration - GYM Membership
+## Regis Service - System Integration - GYM Membership
 
 Berisikan data registrasi member dengan 3 endpoint
 
