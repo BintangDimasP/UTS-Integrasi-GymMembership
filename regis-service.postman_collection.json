@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "2c433e26-a11e-427a-be7c-bb5bfceee43f",
+		"name": "regis-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44159842",
+		"_collection_link": "https://www.postman.com/bintang-538196/workspace/uts/collection/44159842-2c433e26-a11e-427a-be7c-bb5bfceee43f?action=share&source=collection_link&creator=44159842"
+	},
+	"item": [
+		{
+			"name": "registrasi member",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"member_id\": 1,\r\n    \"package_id\": 4,\r\n    \"join_date\": \"2025-04-22\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{r_url}}api/regist",
+					"host": [
+						"{{r_url}}api"
+					],
+					"path": [
+						"regist"
+					]
+				},
+				"description": "member melakukan order berdasarkan data member dan package yang telah tersedia, serta menginputkan tanggal join"
+			},
+			"response": [
+				{
+					"name": "berhasil regis",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member_id\": 1,\r\n    \"package_id\": 4,\r\n    \"join_date\": \"2025-04-22\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{r_url}}api/regist",
+							"host": [
+								"{{r_url}}api"
+							],
+							"path": [
+								"regist"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8003"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Apr 2025 18:22:07 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Pendaftaran berhasil\",\n    \"data\": {\n        \"member_id\": 1,\n        \"package_id\": 4,\n        \"name\": \"Bintang\",\n        \"email\": \"Bintang@gmail.com\",\n        \"package_name\": \"Jawara 4\",\n        \"duration\": 1,\n        \"join_date\": \"2025-04-22T00:00:00.000000Z\",\n        \"end_date\": \"2025-05-22T00:00:00.000000Z\",\n        \"status\": \"Aktif\",\n        \"updated_at\": \"2025-04-22T18:22:07.000000Z\",\n        \"created_at\": \"2025-04-22T18:22:07.000000Z\",\n        \"id\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Data Registration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{r_url}}api/regist",
+					"host": [
+						"{{r_url}}api"
+					],
+					"path": [
+						"regist"
+					]
+				},
+				"description": "Get data member yang telah melakukan registrasi secara keseluruhan"
+			},
+			"response": [
+				{
+					"name": "berhasil",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{r_url}}api/regist",
+							"host": [
+								"{{r_url}}api"
+							],
+							"path": [
+								"regist"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8003"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Apr 2025 18:22:16 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"All Member List\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"member_id\": 1,\n            \"package_id\": 4,\n            \"name\": \"Bintang\",\n            \"email\": \"Bintang@gmail.com\",\n            \"package_name\": \"Jawara 4\",\n            \"duration\": 1,\n            \"join_date\": \"2025-04-22\",\n            \"end_date\": \"2025-05-22\",\n            \"status\": \"Aktif\",\n            \"created_at\": \"2025-04-22T18:22:07.000000Z\",\n            \"updated_at\": \"2025-04-22T18:22:07.000000Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Data Registration by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{r_url}}api/regist/1",
+					"host": [
+						"{{r_url}}api"
+					],
+					"path": [
+						"regist",
+						"1"
+					]
+				},
+				"description": "Get data member yang telah melakukan registrasi berdasarkan registration ID"
+			},
+			"response": [
+				{
+					"name": "berhasil",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{r_url}}api/regist/1",
+							"host": [
+								"{{r_url}}api"
+							],
+							"path": [
+								"regist",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8003"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Apr 2025 18:22:40 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Data Member Ditemukan\",\n    \"data\": {\n        \"id\": 1,\n        \"member_id\": 1,\n        \"package_id\": 4,\n        \"name\": \"Bintang\",\n        \"email\": \"Bintang@gmail.com\",\n        \"package_name\": \"Jawara 4\",\n        \"duration\": 1,\n        \"join_date\": \"2025-04-22\",\n        \"end_date\": \"2025-05-22\",\n        \"status\": \"Aktif\",\n        \"created_at\": \"2025-04-22T18:22:07.000000Z\",\n        \"updated_at\": \"2025-04-22T18:22:07.000000Z\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
