@@ -1,0 +1,825 @@
+{
+	"info": {
+		"_postman_id": "be17859e-5f51-4cbf-a307-50746ef4a21b",
+		"name": "package-service",
+		"description": "package service bersifat provider, berisikan data paket yang tersedia/dapat diorder pada system gym.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44159842",
+		"_collection_link": "https://www.postman.com/bintang-538196/workspace/uts/collection/44159842-be17859e-5f51-4cbf-a307-50746ef4a21b?action=share&source=collection_link&creator=44159842"
+	},
+	"item": [
+		{
+			"name": "Create Package",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Jawara 2\",\r\n    \"price\": 200000,\r\n    \"level\": \"Beginner\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{p_url}}api/packages",
+					"host": [
+						"{{p_url}}api"
+					],
+					"path": [
+						"packages"
+					]
+				},
+				"description": "create data package yang baru"
+			},
+			"response": [
+				{
+					"name": "berhasil",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jawara 4\",\r\n    \"price\": 200000,\r\n    \"level\": \"Beginner\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{p_url}}api/packages",
+							"host": [
+								"{{p_url}}api"
+							],
+							"path": [
+								"packages"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8002"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Apr 2025 18:14:06 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Package berhasil ditambahkan\",\n    \"data\": {\n        \"name\": \"Jawara 4\",\n        \"price\": 200000,\n        \"duration\": 1,\n        \"level\": \"Beginner\",\n        \"updated_at\": \"2025-04-22T18:14:06.000000Z\",\n        \"created_at\": \"2025-04-22T18:14:06.000000Z\",\n        \"id\": 4\n    }\n}"
+				},
+				{
+					"name": "gagal nama packages sama",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jawara 2\",\r\n    \"price\": 200000,\r\n    \"level\": \"Beginner\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{p_url}}api/packages",
+							"host": [
+								"{{p_url}}api"
+							],
+							"path": [
+								"packages"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8002"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Apr 2025 13:37:31 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": {\n        \"name\": [\n            \"The name has already been taken.\"\n        ]\n    },\n    \"message\": \"Validasi gagal\",\n    \"data\": null\n}"
+				},
+				{
+					"name": "gagal,database hanya menerima 4 kategori",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jawara 5\",\r\n    \"price\": 100000,\r\n    \"level\": \"Beginner\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{p_url}}api/packages",
+							"host": [
+								"{{p_url}}api"
+							],
+							"path": [
+								"packages"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8002"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Apr 2025 13:38:55 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": {\n        \"name\": [\n            \"The selected name is invalid.\"\n        ]\n    },\n    \"message\": \"Validasi gagal\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Data Package",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{p_url}}api/packages",
+					"host": [
+						"{{p_url}}api"
+					],
+					"path": [
+						"packages"
+					]
+				},
+				"description": "Get data package yang sudah ada secara keseluruhan"
+			},
+			"response": [
+				{
+					"name": "Berhasil",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{p_url}}api/packages",
+							"host": [
+								"{{p_url}}api"
+							],
+							"path": [
+								"packages"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8002"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Apr 2025 18:14:50 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Packages List\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Jawara 1\",\n            \"price\": 1850000,\n            \"duration\": 12,\n            \"level\": \"Advanced\",\n            \"created_at\": \"2025-04-22T18:12:47.000000Z\",\n            \"updated_at\": \"2025-04-22T18:12:47.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Jawara 2\",\n            \"price\": 1100000,\n            \"duration\": 6,\n            \"level\": \"Intermediate\",\n            \"created_at\": \"2025-04-22T18:13:25.000000Z\",\n            \"updated_at\": \"2025-04-22T18:13:25.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Jawara 3\",\n            \"price\": 610000,\n            \"duration\": 3,\n            \"level\": \"Beginner\",\n            \"created_at\": \"2025-04-22T18:13:53.000000Z\",\n            \"updated_at\": \"2025-04-22T18:13:53.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Jawara 4\",\n            \"price\": 200000,\n            \"duration\": 1,\n            \"level\": \"Beginner\",\n            \"created_at\": \"2025-04-22T18:14:06.000000Z\",\n            \"updated_at\": \"2025-04-22T18:14:06.000000Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Data Package by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{p_url}}api/packages/3",
+					"host": [
+						"{{p_url}}api"
+					],
+					"path": [
+						"packages",
+						"3"
+					]
+				},
+				"description": "Get data package yang sudah ada berdasarkan ID"
+			},
+			"response": [
+				{
+					"name": "berhasil",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{p_url}}api/packages/3",
+							"host": [
+								"{{p_url}}api"
+							],
+							"path": [
+								"packages",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8002"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Apr 2025 18:16:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "56"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Package Ditemukan\",\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"Jawara 3\",\n        \"price\": 610000,\n        \"duration\": 3,\n        \"level\": \"Beginner\",\n        \"created_at\": \"2025-04-22T18:13:53.000000Z\",\n        \"updated_at\": \"2025-04-22T18:13:53.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "update package by ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Jawara 4\",\r\n    \"price\": 210000,\r\n    \"duration\": 1,\r\n    \"level\": \"Beginner\"   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{p_url}}api/packages/4",
+					"host": [
+						"{{p_url}}api"
+					],
+					"path": [
+						"packages",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "berhasil",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jawara 4\",\r\n    \"price\": 210000,\r\n    \"duration\": 1,\r\n    \"level\": \"Beginner\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{p_url}}api/packages/4",
+							"host": [
+								"{{p_url}}api"
+							],
+							"path": [
+								"packages",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8002"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Apr 2025 05:21:56 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Package Berhasil Diupdate\",\n    \"data\": {\n        \"id\": 4,\n        \"name\": \"Jawara 4\",\n        \"price\": 210000,\n        \"duration\": 1,\n        \"level\": \"Beginner\",\n        \"created_at\": \"2025-04-24T13:43:35.000000Z\",\n        \"updated_at\": \"2025-04-26T05:21:56.000000Z\"\n    }\n}"
+				},
+				{
+					"name": "gagal",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jawara 4\",\r\n    \"price\": 210000,\r\n    \"duration\": 1,\r\n    \"level\": \"Beginner\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{p_url}}api/packages/7",
+							"host": [
+								"{{p_url}}api"
+							],
+							"path": [
+								"packages",
+								"7"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8002"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Apr 2025 05:23:44 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"error\",\n    \"message\": \"Package tidak ditemukan\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Packages by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{p_url}}api/packages/4",
+					"host": [
+						"{{p_url}}api"
+					],
+					"path": [
+						"packages",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "berhasil",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{p_url}}api/packages/4",
+							"host": [
+								"{{p_url}}api"
+							],
+							"path": [
+								"packages",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8002"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Apr 2025 13:42:00 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Package Berhasil Dihapus\",\n    \"data\": null\n}"
+				},
+				{
+					"name": "gagal",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{p_url}}api/packages/4",
+							"host": [
+								"{{p_url}}api"
+							],
+							"path": [
+								"packages",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8002"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Apr 2025 13:42:40 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"error\",\n    \"message\": \"Package tidak ditemukan\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "AI",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"budget\": 100000,\r\n    \"level\": \"Beginner\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{p_url}}api/ai",
+					"host": [
+						"{{p_url}}api"
+					],
+					"path": [
+						"ai"
+					]
+				},
+				"description": "AI yang dapat memberikan rekomendasi package yang dapat diorder berdasarkan budget dan level member yang akan mendaftar."
+			},
+			"response": [
+				{
+					"name": "Sesuai Budget & Level",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"budget\": 100000,\r\n    \"level\": \"Beginner\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{p_url}}api/ai",
+							"host": [
+								"{{p_url}}api"
+							],
+							"path": [
+								"ai"
+							]
+						},
+						"description": "AI yang dapat memberikan rekomendasi package yang dapat diorder berdasarkan budget dan level member yang akan mendaftar."
+					},
+					"_postman_previewlanguage": "",
+					"header": "",
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Budget & Level tidak sesuai",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"budget\": 100000,\r\n    \"level\": \"Beginner\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{p_url}}api/ai",
+							"host": [
+								"{{p_url}}api"
+							],
+							"path": [
+								"ai"
+							]
+						},
+						"description": "AI yang dapat memberikan rekomendasi package yang dapat diorder berdasarkan budget dan level member yang akan mendaftar."
+					},
+					"_postman_previewlanguage": "",
+					"header": "",
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Uang tidak cukup",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"budget\": 100000,\r\n    \"level\": \"Beginner\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{p_url}}api/ai",
+							"host": [
+								"{{p_url}}api"
+							],
+							"path": [
+								"ai"
+							]
+						},
+						"description": "AI yang dapat memberikan rekomendasi package yang dapat diorder berdasarkan budget dan level member yang akan mendaftar."
+					},
+					"_postman_previewlanguage": "",
+					"header": "",
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	]
+}
